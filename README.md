@@ -41,13 +41,13 @@ A model-quality score cannot compensate for a failed authorization, isolation, s
 
 ## Evaluation lifecycle
 
-1. **Intake and boundary** — use case, data flows, authority, risk tier, threat model, and owners
-2. **Design assurance** — state machine, safe states, approvals, policy points, network flows, and test plan
-3. **Build and component testing** — unit, contract, policy, code, dependency, secret, SBOM, and attestation checks
-4. **Integration and adversarial testing** — production-like identity, permissions, quotas, tools, attacks, side effects, and audit records
-5. **Operational and human assurance** — load, failure injection, kill switch, revocation, recovery, and human-factors exercises
-6. **Progressive release** — shadow evaluation, restricted canary, explicit stop authority, and rollback rehearsal
-7. **Continuous assurance** — drift monitoring, production sampling, access recertification, provider review, and incident-to-regression linkage
+1. **Intake and boundary**: use case, data flows, authority, risk tier, threat model, and owners
+2. **Design assurance**: state machine, safe states, approvals, policy points, network flows, and test plan
+3. **Build and component testing**: unit, contract, policy, code, dependency, secret, SBOM, and attestation checks
+4. **Integration and adversarial testing**: production-like identity, permissions, quotas, tools, attacks, side effects, and audit records
+5. **Operational and human assurance**: load, failure injection, kill switch, revocation, recovery, and human-factors exercises
+6. **Progressive release**: shadow evaluation, restricted canary, explicit stop authority, and rollback rehearsal
+7. **Continuous assurance**: drift monitoring, production sampling, access recertification, provider review, and incident-to-regression linkage
 
 ## Recommended control stack
 
@@ -80,7 +80,7 @@ Start by proving the secure path for one real workflow; then add automation, con
 
 ## Contributing
 
-Contributions that improve threat models, evaluation methods, implementation guidance, or real-world examples are welcome. Adapt the framework to the organization’s risk profile, regulatory obligations, and operational context.
+Contributions that improve threat models, evaluation methods, implementation guidance, or real-world examples are welcome. Adapt the framework to the organization's risk profile, regulatory obligations, and operational context.
 
 ## License
 
