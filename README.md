@@ -2,11 +2,12 @@
 
 A production-oriented framework for evaluating, certifying, releasing, and operating LLM, retrieval-augmented generation (RAG), and agentic AI systems with enterprise-grade security controls and assurance processes.
 
-This repository provides an organization-ready guide to AI governance and assurance. It covers the full system: model, application, retrieval stack, identity, policy enforcement, tool gateway, runtime, data, monitoring, and human oversight. The objective is to enable practical, evidence-based deployment of AI in enterprise environments.
+This repository provides a pragmatic, organization-ready AI governance and assurance model. It is structured as a master guide plus domain-specific guidance that teams can apply in real deployments.
 
 ## Start here
 
-- [AI Security Evaluation and Assurance Framework](docs/ai-security-evaluation-and-assurance.md)
+- [Master guide](docs/ai-security-evaluation-and-assurance.md)
+- [Documentation map](docs/ai-security-evaluation-and-assurance.md#document-map)
 
 ## What this framework answers
 
@@ -17,51 +18,41 @@ The release authority must be able to answer these questions with evidence:
 3. How will the organization detect, contain, investigate, notify, recover, and learn from a failure?
 4. Which exact model, prompt, policy, data, tool, runtime, evaluator, and infrastructure versions produced the evidence?
 
-A model-quality score cannot compensate for a failed authorization, isolation, secret-management, privacy, supply-chain, or destructive-action control.
+A model-quality score cannot compensate for failed authorization, isolation, secret management, privacy, supply-chain, or destructive-action controls.
+
+## Documentation structure
+
+- [01 AI Governance and Policy](docs/01-ai-governance-policy.md)
+- [02 AI Risk and Control Framework](docs/02-ai-risk-control-framework.md)
+- [03 Model and Prompt Assurance](docs/03-model-and-prompt-assurance.md)
+- [04 Data, RAG, and Privacy](docs/04-data-rag-and-privacy.md)
+- [05 Identity, Access, and Authorization](docs/05-identity-access-and-authorization.md)
+- [06 Agent and Tool Security](docs/06-agent-and-tool-security.md)
+- [07 Runtime, Network, and Isolation](docs/07-runtime-network-and-isolation.md)
+- [08 Supply Chain and Artifact Provenance](docs/08-supply-chain-and-artifact-provenance.md)
+- [09 Observability, Detection, and Incident Response](docs/09-observability-detection-and-incident-response.md)
+- [10 Human Oversight and Approvals](docs/10-human-oversight-and-approvals.md)
+- [11 Release, Change, and Continuous Assurance](docs/11-release-change-and-continuous-assurance.md)
 
 ## Coverage
 
-- Chat assistants, copilots, RAG systems, browser and web agents
-- Coding, workflow, autonomous research, and tool-using agents
-- Model gateways and fine-tuned or adapted models
-- Identity and authorization, permission-aware retrieval, and tenant isolation
-- Tool safety, approval, idempotency, reconciliation, and bounded side effects
-- Prompt injection, excessive agency, confused deputy, secret disclosure, poisoning, SSRF, and supply-chain threats
-- Runtime isolation, egress control, observability, incident response, and recovery
-- Progressive release, mandatory stop-ship gates, and continuous assurance
+- chat assistants, copilots, RAG systems, browser and web agents
+- coding, workflow, autonomous research, and tool-using agents
+- model gateways and fine-tuned or adapted models
+- identity and authorization, permission-aware retrieval, and tenant isolation
+- tool safety, approval, idempotency, reconciliation, and bounded side effects
+- prompt injection, excessive agency, confused deputy, secret disclosure, poisoning, SSRF, and supply-chain threats
+- runtime isolation, egress control, observability, incident response, and recovery
+- progressive release, mandatory stop-ship gates, and continuous assurance
 
 ## Risk tiers
 
 | Tier | Typical use | Required assurance |
 |---|---|---|
-| 1 | Low-impact drafting or search over approved public content | Regression, privacy, basic security, abuse, and operational tests |
-| 2 | Internal workflow support or bounded reversible actions | Identity, permission-aware retrieval, tool gateway, adversarial tests, monitoring, and human sampling |
-| 3 | Health, legal, financial, employment, benefits, government services, or autonomous external actions | Independent security review, mandatory gates, red team, resilience tests, and human approval for material actions |
-| 4 | Unbounded access, irreversible high-impact decisions without accountable review, or unenforceable mandatory controls | Do not deploy; redesign or escalate to formal risk authorization |
-
-## Evaluation lifecycle
-
-1. Intake and boundary: use case, data flows, authority, risk tier, threat model, and owners
-2. Design assurance: safe states, approvals, policy points, network flows, and test plan
-3. Build and component testing: unit, contract, policy, code, dependency, secret, SBOM, and attestation checks
-4. Integration and adversarial testing: production-like identity, permissions, quotas, tools, attacks, side effects, and audit records
-5. Operational and human assurance: load, failure injection, kill switch, revocation, recovery, and human-factors exercises
-6. Progressive release: shadow evaluation, restricted canary, explicit stop authority, and rollback rehearsal
-7. Continuous assurance: drift monitoring, production sampling, access recertification, provider review, and incident-to-regression linkage
-
-## Recommended control stack
-
-- Promptfoo, DeepEval, Ragas, Giskard, garak, Microsoft PyRIT, and Inspect AI for evaluation and adversarial testing
-- OpenTelemetry for correlated traces, metrics, and logs
-- OPA or Cedar for deterministic policy-as-code enforcement
-- OWASP ZAP, Nuclei, Semgrep, CodeQL, Trivy, Syft, and Grype for application and supply-chain security
-- k6, Locust, Chaos Mesh, and Litmus for load and failure testing
-
-These tools are components of a control stack, not substitutes for authorization, isolation, privacy, governance, or operational controls.
-
-## Mandatory release principle
-
-Mandatory failures cannot be converted into a conditional release through aggregate scoring. Any non-mandatory exception must have bounded exposure, compensating controls, an owner, funded remediation, a due date, and an expiration mechanism.
+| 1 | Low-impact drafting or search over approved public content | regression, privacy, basic security, abuse, and operational tests |
+| 2 | Internal workflow support or bounded reversible actions | identity, permission-aware retrieval, tool gateway, adversarial tests, monitoring, and human sampling |
+| 3 | Health, legal, financial, employment, benefits, government services, or autonomous external actions | independent review, mandatory gates, red team, resilience tests, and human approval for material actions |
+| 4 | Unbounded access, irreversible high-impact decisions without accountable review, or unenforceable mandatory controls | do not deploy; redesign or escalate to formal risk authorization |
 
 ## Implementation order
 
@@ -75,8 +66,6 @@ Mandatory failures cannot be converted into a conditional release through aggreg
 8. Secret scanning and artifact provenance
 9. Red-team and adversarial campaigns
 10. Automated regression and incident replay
-
-Start by proving the secure path for one real workflow; then add automation, controls, and evidence.
 
 ## Contributing
 
