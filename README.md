@@ -2,7 +2,7 @@
 
 A production-oriented framework for evaluating, certifying, releasing, and operating LLM, retrieval-augmented generation (RAG), and agentic AI systems with enterprise-grade security controls and assurance processes.
 
-This repository separates the security assurance implementation guide from the broader enterprise AI and data strategy repository. It covers the complete system: model, application, retrieval stack, identity, policy enforcement, tool gateway, runtime, network, human oversight, and infrastructure.
+This repository provides an organization-ready guide to AI governance and assurance. It covers the full system: model, application, retrieval stack, identity, policy enforcement, tool gateway, runtime, data, monitoring, and human oversight. The objective is to enable practical, evidence-based deployment of AI in enterprise environments.
 
 ## Start here
 
@@ -36,18 +36,18 @@ A model-quality score cannot compensate for a failed authorization, isolation, s
 |---|---|---|
 | 1 | Low-impact drafting or search over approved public content | Regression, privacy, basic security, abuse, and operational tests |
 | 2 | Internal workflow support or bounded reversible actions | Identity, permission-aware retrieval, tool gateway, adversarial tests, monitoring, and human sampling |
-| 3 | Health, legal, financial, employment, benefits, government services, or autonomous external actions | Independent security review, mandatory gates, red team, resilience tests, and human approval |
+| 3 | Health, legal, financial, employment, benefits, government services, or autonomous external actions | Independent security review, mandatory gates, red team, resilience tests, and human approval for material actions |
 | 4 | Unbounded access, irreversible high-impact decisions without accountable review, or unenforceable mandatory controls | Do not deploy; redesign or escalate to formal risk authorization |
 
 ## Evaluation lifecycle
 
-1. **Intake and boundary**: use case, data flows, authority, risk tier, threat model, and owners
-2. **Design assurance**: state machine, safe states, approvals, policy points, network flows, and test plan
-3. **Build and component testing**: unit, contract, policy, code, dependency, secret, SBOM, and attestation checks
-4. **Integration and adversarial testing**: production-like identity, permissions, quotas, tools, attacks, side effects, and audit records
-5. **Operational and human assurance**: load, failure injection, kill switch, revocation, recovery, and human-factors exercises
-6. **Progressive release**: shadow evaluation, restricted canary, explicit stop authority, and rollback rehearsal
-7. **Continuous assurance**: drift monitoring, production sampling, access recertification, provider review, and incident-to-regression linkage
+1. Intake and boundary: use case, data flows, authority, risk tier, threat model, and owners
+2. Design assurance: safe states, approvals, policy points, network flows, and test plan
+3. Build and component testing: unit, contract, policy, code, dependency, secret, SBOM, and attestation checks
+4. Integration and adversarial testing: production-like identity, permissions, quotas, tools, attacks, side effects, and audit records
+5. Operational and human assurance: load, failure injection, kill switch, revocation, recovery, and human-factors exercises
+6. Progressive release: shadow evaluation, restricted canary, explicit stop authority, and rollback rehearsal
+7. Continuous assurance: drift monitoring, production sampling, access recertification, provider review, and incident-to-regression linkage
 
 ## Recommended control stack
 
@@ -61,7 +61,7 @@ These tools are components of a control stack, not substitutes for authorization
 
 ## Mandatory release principle
 
-Mandatory failures cannot be converted into a conditional release through aggregate scoring. Any non-mandatory exception must have bounded exposure, compensating controls, an owner, funded remediation, a due date, and an expiry.
+Mandatory failures cannot be converted into a conditional release through aggregate scoring. Any non-mandatory exception must have bounded exposure, compensating controls, an owner, funded remediation, a due date, and an expiration mechanism.
 
 ## Implementation order
 
@@ -80,8 +80,9 @@ Start by proving the secure path for one real workflow; then add automation, con
 
 ## Contributing
 
-Contributions that improve threat models, evaluation methods, implementation guidance, or real-world examples are welcome. Adapt the framework to the organization's risk profile, regulatory obligations, and operational context.
+Contributions that improve threat models, evaluation methods, implementation guidance, or real-world examples are welcome. Adapt the framework to the organization's risk profile, regulatory obligations, and deployment model.
 
 ## License
 
 This framework is provided as a reference for enterprise AI security assurance. Organizations should review and adapt it for their specific legal, regulatory, privacy, and security requirements.
+
